@@ -8,7 +8,10 @@ function testGreeter() {
 }
 
 function doGet(_e: any) {
-  var output = ContentService.createTextOutput("hoge");
+  let max = 10;
+  let min = 1;
+  let result = (Math.floor(Math.random() * (max - min)) + min) % 2 == 0 ? "OK" : "NG";
+  var output = ContentService.createTextOutput(result);
   output.setMimeType(ContentService.MimeType.TEXT);
   return output;
 }
